@@ -1,0 +1,350 @@
+/* --- Global Styles --- */
+:root {
+    --primary-color: #007bff;
+    --primary-gradient: linear-gradient(45deg, #ff8c00, #ff4500);
+    --light-color: #f4f4f4;
+    --dark-color: #333;
+    --font-family: 'Arial', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    color: var(--dark-color);
+    background-color: #fff;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* --- Fixed Navbar Gap Fix --- */
+main {
+    padding-top: 80px; /* Navbar height 70px + 10px extra gap */
+}
+
+.section {
+    padding: 4rem 0;
+    scroll-margin-top: 80px; /* Menu link-e click korle header jeno navbar-er niche na jay */
+}
+
+/* --- Utility Classes --- */
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 2rem;
+}
+
+.bg-light {
+    background-color: var(--light-color);
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* --- Header & Navbar --- */
+.navbar {
+    background: var(--primary-gradient);
+    color: #fff;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.nav-branding {
+    filter: brightness(0) invert(1);
+}
+
+.logo {
+    height: 40px;
+    width: auto;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+}
+
+.nav-item {
+    margin-left: 1.5rem;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: 0.3s;
+    background-color: #fff;
+}
+
+/* --- About Section --- */
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.profile-pic {
+    width: 180px;
+    height: 250px;
+    border-radius: 200px;
+    object-fit: cover;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+}
+
+.profile-pic:hover {
+    transform: scale(1.05);
+}
+
+.about-text {
+    max-width: 600px;
+}
+
+.about-text p {
+    margin-bottom: 2.5rem; /* Gap-ta 1.5 theke bariye 2.5 kora holo */
+    text-align: justify;
+}
+
+.about-text .contact-info {
+    color: #555;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.5rem 1.2rem; /* Padding komiye size choto kora holo */
+    font-size: 0.9rem;      /* Font size arektu komano holo */
+    background: var(--primary-gradient);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(255, 69, 0, 0.3);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(255, 69, 0, 0.4);
+    opacity: 0.95;
+}
+
+/* --- Publication Section --- */
+.publications-list {
+    max-width: 900px;
+    margin: 2rem auto;
+}
+
+.pub-card {
+    display: flex;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    border-left: 6px solid #ff8c00;
+    gap: 1.5rem;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+}
+
+.pub-icon i {
+    font-size: 2.5rem;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.pub-category {
+    background: var(--primary-gradient);
+    color: #fff;
+    padding: 2px 12px;
+    font-size: 0.75rem;
+    border-radius: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.pub-details h3 {
+    margin: 0.5rem 0;
+    text-align: left;
+    font-size: 1.4rem;
+}
+
+.status-in-press {
+    color: #28a745;
+    font-weight: bold;
+    font-size: 0.9rem;
+    padding: 4px 10px;
+    border: 1px solid #28a745;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+/* --- Projects Section --- */
+.project-filters {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.filter-btn {
+    background: none;
+    border: 2px solid #ff8c00;
+    color: #ff8c00;
+    padding: 0.5rem 1.5rem;
+    margin: 0.5rem;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.filter-btn.active {
+    background: var(--primary-gradient);
+    color: #fff;
+}
+
+.project-grid {
+    display: none;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.project-grid.active {
+    display: grid;
+}
+
+.project-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+/* --- Skills Section --- */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2rem;
+    list-style: none;
+}
+
+.skill-card {
+    background: #fff;
+    padding: 2rem 1rem;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.skill-card i {
+    font-size: 4rem;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* --- Contact & Footer --- */
+.contact-grid {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.contact-item {
+    width: 50px;
+    height: 50px;
+    background: var(--primary-gradient);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.5rem;
+    transition: 0.3s;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: var(--primary-gradient);
+    color: #fff;
+}
+
+/* --- Responsive Design --- */
+@media(max-width: 768px) {
+    main {
+        padding-top: 70px;
+    }
+
+    .hamburger { display: block; }
+    
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: #ff8c00;
+        width: 100%;
+        transition: 0.3s;
+    }
+
+    .nav-menu.active { left: 0; }
+
+    .about-content { text-align: center; }
+    
+    .pub-card {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+    
+    .pub-details h3 { text-align: center; }
+}
